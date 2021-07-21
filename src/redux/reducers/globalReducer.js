@@ -8,6 +8,11 @@ export const globalReducer = (state=initialState, action) => {
       return {
         ...state, category: action.category,
       };
+    case GLOBAL.SET_SUBCATEGORY:
+      return {
+        ...state,
+        subCategory: action.subCategory,
+    };
     
     default: return state
   }

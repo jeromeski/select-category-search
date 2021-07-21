@@ -4,3 +4,5 @@ export const getProductsByCategory = (arr, category) => {
 }
 
 export const getProductsBySearch = (products, keyword) => keyword && keyword !== "" ? products.filter(product => product.name.toLowerCase().includes(keyword)) : products;
+
+
