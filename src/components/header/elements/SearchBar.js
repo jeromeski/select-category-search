@@ -1,4 +1,5 @@
 import { AutoComplete, Button, Select } from 'antd';
+import slugify from "react-slugify"
 import { SHOP } from 'common/defines';
 import { getProductsByCategory } from 'common/utils';
 import React, { useState } from 'react';
@@ -28,7 +29,7 @@ function SearchBar({ fillData, placeholder }) {
 
   const onSelectCategory = (value) => {
     dispatch(setGlobalCategory(value));
-    dispatch(setSubCategory(""));
+    dispatch(setSubCategory(''));
   };
   const openDropdownOption = (value) => {
     setShowDropdownOptions(true);
@@ -48,9 +49,9 @@ function SearchBar({ fillData, placeholder }) {
     } else {
       history.push({
         pathname: '/',
-        search: `${search}`
+        search: `${slugify(search.toLocaleLowerCase())}`
       });
-    } //
+    }
   };
 
   return (
